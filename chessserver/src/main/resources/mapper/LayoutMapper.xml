@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.se.chess.chessserver.mapper.LayoutMapper">
+    <insert id="insertLayout" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into layout (username, data) values(#{username}, #{data});
+    </insert>
+    <update id="updateLayout">
+        update layout set data = #{data} where id = #{id};
+    </update>
+    <select id="getAllLayoutsByUsername" resultType="com.se.chess.chessserver.pojo.LayoutInfo">
+        select * from layout where username = #{username};
+    </select>
+    <select id="getLayoutById" resultType="com.se.chess.chessserver.pojo.LayoutInfo">
+        select * from layout where id = #{id};
+    </select>
+</mapper>

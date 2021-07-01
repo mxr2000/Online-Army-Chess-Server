@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.se.chess.chessserver.mapper.UserMapper">
+
+    <insert id="insertUser">
+        insert into user values(#{username}, #{password});
+    </insert>
+    <select id="getUserByUsernameAndPassword" resultType="com.se.chess.chessserver.pojo.UserInfo">
+        select * from user where username = #{username} and password = #{password};
+    </select>
+    <select id="getUserByUsername" resultType="com.se.chess.chessserver.pojo.UserInfo">
+        select * from user where username = #{username}
+    </select>
+</mapper>
